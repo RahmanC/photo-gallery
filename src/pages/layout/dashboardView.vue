@@ -10,18 +10,15 @@
         <div
           class="h-[110px] border-b-[1px] border-[#9a9b9b] pt-[1.5rem] pb-[1.5rem] flex items-center justify-between"
         >
-          <div>STGallery</div>
+          <div class="font-[800] text-xl">STGallery</div>
           <svg-icon type="mdi" :path="path" class="text-[#4c9a6e]"></svg-icon>
         </div>
-        <!-- v-show="isMobile" -->
 
         <div
           class="border-b-[1px] border-[#9a9b9b] pt-[1.5rem] pb-[1.5rem] flex flex-col"
           @click="showSubMenu"
         >
-          <div
-            class="flex items-center justify-between mb-[1rem] cursor-pointer"
-          >
+          <div class="flex items-center gap-10 mb-[1rem] cursor-pointer">
             <svg-icon
               type="mdi"
               :path="dashboard"
@@ -80,7 +77,7 @@
 
         <router-link
           to="#"
-          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center gap-10 mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
           <svg-icon type="mdi" :path="explore"></svg-icon>
           <div class="text-start mr-[20px]">Explore</div>
@@ -89,7 +86,7 @@
 
         <router-link
           to="#"
-          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center gap-10 mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
           <svg-icon type="mdi" :path="bookmark"></svg-icon>
           <div>Bookmark</div>
@@ -98,7 +95,7 @@
 
         <router-link
           to="#"
-          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center gap-10 mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
           <svg-icon type="mdi" :path="download"></svg-icon>
           <div>Downloads</div>
@@ -107,7 +104,7 @@
 
         <router-link
           to="#"
-          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center gap-10 mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
           <svg-icon type="mdi" :path="notification"></svg-icon>
           <div>Notification</div>
@@ -122,7 +119,7 @@
       <div class="border-b-[1px] border-[#9a9b9b] mb-3">
         <router-link
           to="#"
-          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center gap-10 mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
           <svg-icon type="mdi" :path="settings" class=""></svg-icon>
           <div>Settings</div>
@@ -131,7 +128,7 @@
 
         <router-link
           to="#"
-          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center gap-10 mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
           <svg-icon type="mdi" :path="help" class=""></svg-icon>
           <div>Help</div>

@@ -12,8 +12,8 @@
         class="flex flex-col lg:flex-row items-center justify-between w-[60%] h-[100px] mt-4 lg:mt-[0] lg:mb-0"
       >
         <div class="flex items-center gap-[1rem] mb-3 lg:mb-0 justify-between">
-          <div>Feed</div>
-          <div>Edit</div>
+          <div :class="feedClass">Feed</div>
+          <div :class="editClass">Edit</div>
         </div>
 
         <div class="relative flex items-center justify-center mb-5 lg:mb-0">
@@ -153,6 +153,22 @@ export default {
         return 1;
       }
       return 2;
+    },
+  },
+  computed: {
+    feedClass() {
+      if (this.$route.path === "/feed" || this.$route.path === "/") {
+        return "border-b-[3px] border-[#4c9a6e] leading-[6rem]";
+      } else {
+        return "border-b-[3px] border-transparent leading-[6rem]";
+      }
+    },
+    editClass() {
+      if (this.$route.path === "/edit") {
+        return "border-b-[3px] border-[#4c9a6e] leading-[6rem]";
+      } else {
+        return "border-b-[3px] border-transparent leading-[6rem]";
+      }
     },
   },
 };
