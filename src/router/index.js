@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import dashboardView from "../pages/master/dashboardView";
+import dashboardView from "../pages/layout/dashboardView";
 import feedView from "../pages/feedView";
 
 const routes = [
   {
     name: "Dashboard",
-    path: "/",
+    path: "/feed",
     component: dashboardView,
     children: [
       {

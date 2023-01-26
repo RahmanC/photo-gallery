@@ -266,6 +266,7 @@ export default {
   .dashboard__sidebar {
     transform: translateX(-100%);
     z-index: 2000000;
+    opacity: 90%;
   }
 
   .dashboard__sidebar.is-active {
