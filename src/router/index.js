@@ -1,24 +1,25 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import dashboardView from "../pages/master/dashboardView";
-import homeView from "../pages/homeView";
-import profileView from "../pages/profileView";
+import feedView from "../pages/feedView";
 
 const routes = [
   {
     name: "Dashboard",
     path: "/",
     component: dashboardView,
-  },
-  {
-    name: "Home",
-    path: "/home",
-    component: homeView,
-  },
-  {
-    name: "Profile",
-    path: "/profile",
-    component: profileView,
+    children: [
+      {
+        name: "Edit",
+        path: "/edit",
+        component: feedView,
+      },
+      {
+        name: "Feed",
+        path: "/feed",
+        component: feedView,
+      },
+    ],
   },
 ];
 
