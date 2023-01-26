@@ -158,16 +158,16 @@ export default {
   computed: {
     feedClass() {
       if (this.$route.path === "/feed" || this.$route.path === "/") {
-        return "border-b-[3px] border-[#4c9a6e] leading-[6rem]";
+        return "border-b-[3px] border-[#4c9a6e] lg:leading-[6rem] leading-none";
       } else {
-        return "border-b-[3px] border-transparent leading-[6rem]";
+        return "border-b-[3px] border-transparent lg:leading-[6rem] leading-none";
       }
     },
     editClass() {
       if (this.$route.path === "/edit") {
-        return "border-b-[3px] border-[#4c9a6e] leading-[6rem]";
+        return "border-b-[3px] border-[#4c9a6e] lg:leading-[6rem] leading-none";
       } else {
-        return "border-b-[3px] border-transparent leading-[6rem]";
+        return "border-b-[3px] border-transparent lg:leading-[6rem] leading-none";
       }
     },
   },
