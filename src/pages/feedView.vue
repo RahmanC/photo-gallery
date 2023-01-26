@@ -12,8 +12,8 @@
         class="flex flex-col lg:flex-row items-center justify-between w-[60%] h-[100px] mt-4 lg:mt-[0] lg:mb-0"
       >
         <div class="flex items-center gap-[1rem] mb-3 lg:mb-0 justify-between">
-          <div :class="feedClass">Feed</div>
-          <div :class="editClass">Edit</div>
+          <router-link to="/" :class="feedClass">Feed</router-link>
+          <router-link to="/edit" :class="editClass">Edit</router-link>
         </div>
 
         <div class="relative flex items-center justify-center mb-5 lg:mb-0">
