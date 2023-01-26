@@ -82,26 +82,49 @@
     <!-- main -->
     <div class="w-full max-h-[90vh] p-[2rem]">
       <!-- header -->
-      <div class="h-[100px] border-b-[1px] border-[#9a9b9b]">
-        <div class="relative">
-      <input type="text" v-model="searchTerm" class="bg-white h-12 px-4 rounded-lg" placeholder="Search for photos..." @keyup.enter="searchImages" />
-      <button class="absolute right-0 top-0 mt-2 mr-2" @click="search">Search</button>
-    </div>
+      <div class="flex items-center justify-between h-[100px] border-b-[1px] border-[#9a9b9b]">
+
+        <div class="text-[2.3rem] font-[600]">Dashboard</div>
+        <div class="flex items-center gap-[1rem] justify-between">
+          <div>Feed</div>
+          <div>Edit</div>
+        </div>
+        <div class="">
+          <div class="relative flex items-center justify-center">
+            <input type="text" v-model="searchTerm" class="bg-white h-12 px-4 rounded-lg" placeholder="Search for photos..." @keyup.enter="searchImages" />
+            <button class="absolute right-0 top-0 mt-2 mr-2" @click="search">Search</button>
+          </div>
+        </div>
+
       </div>
 
       <!-- gallery -->
       <div class="max-h-[80vh] overflow-y-auto">
-        <div class="grid grid-rows-1 lg:grid-cols-4 gap-4">
+        <div class="grid grid-rows-4 lg:grid-cols-4 gap-4">
       <div
         v-for="(image, index) in images"
         :key="image.id"
-        :class="`relative h-64 lg:h-auto row-span-1 lg:row-span-${getRowSpan(index)}`"
+        :class="`relative h-64 lg:h-auto sm:row-span-1 lg:row-span-${getRowSpan(index)}`"
       >
         <img
           :src="image.urls.regular"
           :alt="image.description"
           class="object-cover w-full h-full"
         />
+
+        <div class="bg-[##50514c] absolute bottom-5 h-[25px] left-0 flex justify-between items-center w-full px-3">
+          <div>line</div>
+
+          <div>
+            <p>In the Home</p>
+            <div>
+              <div>author</div>
+              <div>name</div>
+            </div>
+          </div>
+
+          <div>icon</div>
+        </div>
       </div>
     </div>
       </div>
