@@ -1,14 +1,14 @@
 <template>
-  <div class="max-w-[100%] h-screen flex flex-1 text-[#e9e9e9] bg-[#171918]">
+  <div class="dashboard text-[#e9e9e9] bg-[#171918] max-w-[100%] h-[100vh]">
     <!-- sidebar -->
     <div
-      class="hambuger-menu z-20 flex flex-col justify-between w-[80%] lg:w-[300px] h-full border-r-[1px] border-[#9a9b9b] px-[2.5rem]"
-      v-show="showSide"
+      class="dashboard__sidebar text-[#e9e9e9] bg-[#171918] flex flex-col justify-between h-full border-r-[1px] border-[#9a9b9b] px-[2.5rem]"
+      v-bind:class="{ 'is-active': sidebarOpen }"
     >
       <!-- top -->
       <div class="">
         <div
-          class="h-[100px] border-b-[1px] border-[#9a9b9b] pt-[1.5rem] pb-[1.5rem] flex items-center justify-between"
+          class="h-[110px] border-b-[1px] border-[#9a9b9b] pt-[1.5rem] pb-[1.5rem] flex items-center justify-between"
         >
           <div>STGallery</div>
           <svg-icon type="mdi" :path="path" class="text-[#4c9a6e]"></svg-icon>
@@ -19,7 +19,7 @@
           class="border-b-[1px] border-[#9a9b9b] pt-[1.5rem] pb-[1.5rem] flex flex-col"
           @click="showSubMenu"
         >
-          <div class="flex items-center justify-around mb-[1rem]">
+          <div class="flex items-center justify-between mb-[1rem]">
             <svg-icon
               type="mdi"
               :path="dashboard"
@@ -78,36 +78,36 @@
 
         <router-link
           to="#"
-          class="flex items-center justify-around mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
-          <svg-icon type="mdi" :path="dashboard" class=""></svg-icon>
+          <svg-icon type="mdi" :path="explore"></svg-icon>
           <div class="text-start mr-[20px]">Explore</div>
           <div></div>
         </router-link>
 
         <router-link
           to="#"
-          class="flex items-center justify-around mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
-          <svg-icon type="mdi" :path="dashboard" class=""></svg-icon>
+          <svg-icon type="mdi" :path="bookmark"></svg-icon>
           <div>Bookmark</div>
           <div></div>
         </router-link>
 
         <router-link
           to="#"
-          class="flex items-center justify-around mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
-          <svg-icon type="mdi" :path="dashboard" class=""></svg-icon>
+          <svg-icon type="mdi" :path="download"></svg-icon>
           <div>Downloads</div>
           <div></div>
         </router-link>
 
         <router-link
           to="#"
-          class="flex items-center justify-around mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
-          <svg-icon type="mdi" :path="dashboard" class=""></svg-icon>
+          <svg-icon type="mdi" :path="notification"></svg-icon>
           <div>Notification</div>
           <div class="py-[2px] px-[5px] bg-[#4c9a6e] rounded-md text-[0.6rem]">
             +9
@@ -120,18 +120,18 @@
       <div class="border-b-[1px] border-[#9a9b9b] mb-3">
         <router-link
           to="#"
-          class="flex items-center justify-around mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
-          <svg-icon type="mdi" :path="dashboard" class=""></svg-icon>
+          <svg-icon type="mdi" :path="settings" class=""></svg-icon>
           <div>Settings</div>
           <div></div>
         </router-link>
 
         <router-link
           to="#"
-          class="flex items-center justify-around mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
+          class="flex items-center justify-between mb-[1rem] mt-[1.5rem] hover:bg-white active:bg-white hover:text-black rounded"
         >
-          <svg-icon type="mdi" :path="dashboard" class=""></svg-icon>
+          <svg-icon type="mdi" :path="help" class=""></svg-icon>
           <div>Help</div>
           <div></div>
         </router-link>
@@ -156,12 +156,12 @@
     </div>
 
     <!-- main -->
-    <div class="lg:w-full max-h-[90vh] p-[2rem]">
+    <div class="dashboard__content h-full p-[2rem]">
       <svg-icon
         type="mdi"
         :path="menu"
-        class="text-[#4c9a6e] cursor-pointer"
         v-show="isMobile"
+        class="text-[#4c9a6e] cursor-pointer float-right"
         @click="toggleSidebar"
       ></svg-icon>
       <!-- main -->
@@ -182,6 +182,12 @@ import {
   mdiRss,
   mdiMenu,
   mdiCircleSmall,
+  mdiMessageBadge,
+  mdiCellphoneArrowDownVariant,
+  mdiBookmarkMultipleOutline,
+  mdiMapMarkerCircle,
+  mdiCogOutline,
+  mdiHelpCircleOutline,
 } from "@mdi/js";
 
 export default {
@@ -200,9 +206,15 @@ export default {
       feed: mdiRss,
       menu: mdiMenu,
       dot: mdiCircleSmall,
+      download: mdiCellphoneArrowDownVariant,
+      notification: mdiMessageBadge,
+      bookmark: mdiBookmarkMultipleOutline,
+      explore: mdiMapMarkerCircle,
+      settings: mdiCogOutline,
+      help: mdiHelpCircleOutline,
       submenu: false,
-      showSide: true,
       isMobile: false,
+      sidebarOpen: false,
       user: require("@/assets/images/user.png"),
     };
   },
@@ -211,21 +223,57 @@ export default {
     this.handleResize();
   },
   methods: {
-    toggleSidebar() {
-      this.showSide = !this.showSide;
-    },
     showSubMenu() {
       this.submenu = !this.submenu;
     },
     handleResize() {
-      this.isMobile = window.innerWidth <= 600;
+      this.isMobile = window.innerWidth <= 770;
+    },
+    toggleSidebar() {
+      this.sidebarOpen = !this.sidebarOpen;
     },
   },
 };
 </script>
 
 <style>
-.grid {
-  width: 100%;
+.dashboard {
+  display: flex;
+}
+
+.dashboard__sidebar {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.dashboard__sidebar.is-active {
+  transform: translateX(0);
+}
+
+.dashboard__content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  margin-left: 300px;
+}
+
+@media (max-width: 768px) {
+  .dashboard__sidebar {
+    transform: translateX(-100%);
+    z-index: 2000000;
+  }
+
+  .dashboard__sidebar.is-active {
+    transform: translateX(0);
+  }
+
+  .dashboard__content {
+    margin-left: 0;
+  }
 }
 </style>

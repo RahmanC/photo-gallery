@@ -1,8 +1,8 @@
 <template>
-  <div class="max-w-[100%] lg:max-w-[100vw]">
+  <div class="max-w-[100%] max-h-[100vh] lg:max-w-[100vw]">
     <!-- top -->
     <div
-      class="flex flex-col lg:flex-row items-center justify-between max-w-[100vw] h-[100px] mb-4 lg:mb-0 border-b-[1px] border-[#9a9b9b]"
+      class="flex flex-col lg:flex-row items-center justify-between max-w-[100vw] h-[100px] mt-4 lg:mt-[0] lg:mb-0 border-b-[1px] border-[#9a9b9b]"
     >
       <div class="flex items-center justify-between w-full lg:w-[50%]">
         <div class="text-[2.3rem] font-[600]">Dashboard</div>
@@ -11,29 +11,24 @@
           <div>Edit</div>
         </div>
       </div>
-      <div class="">
-        <div class="relative flex items-center justify-center mb-4 lg:mb-0">
-          <svg-icon
-            type="mdi"
-            :path="search"
-            class="text-[#4c9a6e] absolute top-3 left-3"
-          ></svg-icon>
-          <input
-            type="text"
-            v-model="searchTerm"
-            class="bg-[#202322] h-12 pl-10 rounded-3xl text-white"
-            placeholder="Search"
-            @input="searchImages"
-          />
-          <!-- <button class="absolute right-0 top-0 mt-2 mr-2" @click="search">
-            Search
-          </button> -->
-        </div>
+      <div class="relative flex items-center justify-center mb-5 lg:mb-0">
+        <svg-icon
+          type="mdi"
+          :path="search"
+          class="text-[#4c9a6e] absolute top-3 left-3"
+        ></svg-icon>
+        <input
+          type="text"
+          v-model="searchTerm"
+          class="bg-[#202322] h-12 pl-10 rounded-3xl text-white"
+          placeholder="Search"
+          @input="searchImages"
+        />
       </div>
     </div>
 
     <!-- gallery -->
-    <div class="max-h-[75vh] overflow-y-auto mt-4">
+    <div class="max-h-[80vh] overflow-y-auto mt-4">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
         <div
           v-for="(image, index) in images"
