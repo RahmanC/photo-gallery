@@ -19,7 +19,9 @@
           class="border-b-[1px] border-[#9a9b9b] pt-[1.5rem] pb-[1.5rem] flex flex-col"
           @click="showSubMenu"
         >
-          <div class="flex items-center justify-between mb-[1rem]">
+          <div
+            class="flex items-center justify-between mb-[1rem] cursor-pointer"
+          >
             <svg-icon
               type="mdi"
               :path="dashboard"
@@ -43,7 +45,7 @@
           <!-- sub menu -->
           <div v-show="submenu">
             <router-link
-              to="/feed"
+              to="/"
               class="flex items-center justify-start ml-[40%] mb-[0.6rem] text-sm hover:bg-white active:bg-white hover:text-black rounded mx-[0.5rem]"
             >
               <svg-icon

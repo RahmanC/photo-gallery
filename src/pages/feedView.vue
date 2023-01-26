@@ -2,28 +2,34 @@
   <div class="max-w-[100%] max-h-[100vh] lg:max-w-[100vw]">
     <!-- top -->
     <div
-      class="flex flex-col lg:flex-row items-center justify-between max-w-[100vw] h-[100px] mt-4 lg:mt-[0] lg:mb-0 border-b-[1px] border-[#9a9b9b]"
+      class="flex flex-col lg:flex-row items-center lg:gap-[20rem] max-w-[100vw] h-[180px] lg:h-[100px] mt-4 lg:mt-[0] lg:mb-0 border-b-[1px] border-[#9a9b9b]"
     >
-      <div class="flex items-center justify-between w-full lg:w-[50%]">
+      <div>
         <div class="text-[2.3rem] font-[600]">Dashboard</div>
-        <div class="flex items-center gap-[1rem] justify-between">
+      </div>
+
+      <div
+        class="flex flex-col lg:flex-row items-center justify-between w-[60%] h-[100px] mt-4 lg:mt-[0] lg:mb-0"
+      >
+        <div class="flex items-center gap-[1rem] mb-3 lg:mb-0 justify-between">
           <div>Feed</div>
           <div>Edit</div>
         </div>
-      </div>
-      <div class="relative flex items-center justify-center mb-5 lg:mb-0">
-        <svg-icon
-          type="mdi"
-          :path="search"
-          class="text-[#4c9a6e] absolute top-3 left-3"
-        ></svg-icon>
-        <input
-          type="text"
-          v-model="searchTerm"
-          class="bg-[#202322] h-12 pl-10 rounded-3xl text-white"
-          placeholder="Search"
-          @input="searchImages"
-        />
+
+        <div class="relative flex items-center justify-center mb-5 lg:mb-0">
+          <svg-icon
+            type="mdi"
+            :path="search"
+            class="text-[#4c9a6e] absolute top-3 left-3"
+          ></svg-icon>
+          <input
+            type="text"
+            v-model="searchTerm"
+            class="bg-[#202322] h-12 pl-10 rounded-3xl text-white"
+            placeholder="Search"
+            @input="searchImages"
+          />
+        </div>
       </div>
     </div>
 

@@ -6,7 +6,7 @@ import feedView from "../pages/feedView";
 const routes = [
   {
     name: "Dashboard",
-    path: "/feed",
+    path: "/",
     component: dashboardView,
     children: [
       {
@@ -16,7 +16,7 @@ const routes = [
       },
       {
         name: "Feed",
-        path: "/feed",
+        path: "/",
         component: feedView,
       },
     ],
